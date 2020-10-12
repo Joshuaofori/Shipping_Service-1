@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.17)
-project(Shipping_service)
+project(shipping)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Shipping_service main.cpp Truck.cpp Truck.h Slot.cpp Slot.h Packet.cpp Packet.h Point.cpp Point.h)
+add_executable(shipping main.cpp situation/Point.cpp situation/Point.h situation/Instance.cpp situation/Instance.h situation/Shipping.cpp situation/Shipping.h)
