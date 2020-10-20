@@ -24,11 +24,11 @@ void Instance::setDepot(const Point &Depot) {
     m_depot = Depot;
 }
 
-const std::list<std::list<float>> &Instance::getDistanceMatrix() const {
+const std::vector<std::vector<float>> &Instance::getDistanceMatrix() const {
     return m_distanceMatrix;
 }
 
-void Instance::setDistanceMatrix(const std::list<std::list<float>> &DistanceMatrix) {
+void Instance::setDistanceMatrix(const std::vector<std::vector<float>> &DistanceMatrix) {
     m_distanceMatrix = DistanceMatrix;
 }
 
@@ -53,7 +53,7 @@ std::ostream &operator<<(std::ostream &os, const Instance& i) {
 *
 */
 void Instance::generateDistanceMatrix() {
-    std::list<float> tmp;
+    std::vector<float> tmp;
 
     //set distance between the depot and himself which is 0
     tmp.emplace_back(0);
@@ -78,7 +78,7 @@ void Instance::generateDistanceMatrix() {
 * @return list of distance as float.
 */
 
-std::list<float> Instance::calculateDistance(const Shipping& s,char c){
+std::vector<float> Instance::calculateDistance(const Shipping& s,char c){
     Point actualPos;
     switch(c){
         case 'o':
@@ -92,7 +92,7 @@ std::list<float> Instance::calculateDistance(const Shipping& s,char c){
             break;
     }
 
-    std::list<float> tmp;
+    std::vector<float> tmp;
     tmp.emplace_back(distance(actualPos,m_depot));
 
     for(const auto& destinationPoint: m_shippingPoints){

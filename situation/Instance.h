@@ -3,20 +3,21 @@
 
 #include <chrono>
 #include <random>
+#include <vector>
 #include <list>
 #include <iostream>
 #include "Point.h"
 #include "Shipping.h"
 
 class Instance {
-    std::list<std::list<float> > m_distanceMatrix = std::list<std::list<float> >();
+    std::vector<std::vector<float> > m_distanceMatrix = std::vector<std::vector<float> >();
     std::list<Shipping> m_shippingPoints = std::list<Shipping>();
     Point m_depot = Point(0,0);
 
 public:
-    const std::list<std::list<float>> &getDistanceMatrix() const;
+    const std::vector<std::vector<float>> &getDistanceMatrix() const;
 
-    void setDistanceMatrix(const std::list<std::list<float>> &DistanceMatrix);
+    void setDistanceMatrix(const std::vector<std::vector<float>> &DistanceMatrix);
 
     const std::list<Shipping> &getShippingPoint() const;
 
@@ -28,7 +29,7 @@ public:
 
     void generateDistanceMatrix();
 
-    std::list<float> calculateDistance(const Shipping& s,char c);
+    std::vector<float> calculateDistance(const Shipping& s,char c);
 
     void showDestinationMatrix();
 
