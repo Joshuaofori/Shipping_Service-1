@@ -11,7 +11,7 @@
 
 class Instance {
     std::vector<std::vector<float> > m_distanceMatrix = std::vector<std::vector<float> >();
-    std::list<Shipping> m_shippingPoints = std::list<Shipping>();
+    std::vector<Shipping> m_shippingPoints = std::vector<Shipping>();
     Point m_depot = Point(0,0);
 
 public:
@@ -19,9 +19,9 @@ public:
 
     void setDistanceMatrix(const std::vector<std::vector<float>> &DistanceMatrix);
 
-    const std::list<Shipping> &getShippingPoint() const;
+    const std::vector<Shipping> &getShippingPoint() const;
 
-    void setShippingPoint(const std::list<Shipping> &ShippingPoint);
+    void setShippingPoint(const std::vector<Shipping> &ShippingPoint);
 
     const Point &getDepot() const;
 

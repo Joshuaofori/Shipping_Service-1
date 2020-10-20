@@ -32,11 +32,11 @@ void Instance::setDistanceMatrix(const std::vector<std::vector<float>> &Distance
     m_distanceMatrix = DistanceMatrix;
 }
 
-const std::list<Shipping> &Instance::getShippingPoint() const {
+const std::vector<Shipping> &Instance::getShippingPoint() const {
     return m_shippingPoints;
 }
 
-void Instance::setShippingPoint(const std::list<Shipping> &ShippingPoint) {
+void Instance::setShippingPoint(const std::vector<Shipping> &ShippingPoint) {
     m_shippingPoints = ShippingPoint;
 }
 
